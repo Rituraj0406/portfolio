@@ -1,0 +1,9 @@
+#skill-list button{
+   box-shadow: 0 0 6px rgb(0 0 0 / 40%) !important;
+   transition: 0.5s all ease-in-out !important;
+}
+
+#skill-list button:hover{ 
+    border-radius: 50px;
+    background-color: #ddddde;
+}
