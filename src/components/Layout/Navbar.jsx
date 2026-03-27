@@ -10,17 +10,6 @@ export default function Navbar({ links, scrollTo, active, menuOpen }) {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const s = {
-        navLink: (isActive) => ({
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: "0.85rem", fontWeight: 500,
-            letterSpacing: "0.06em", textTransform: "uppercase",
-            cursor: "pointer", color: isActive ? "#1a1a1a" : "#6b6b6b",
-            position: "relative",
-            paddingBottom: "4px",
-            transition: "color 0.2s ease",
-        }),
-    }
     return (
         <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
             <div className={styles.inner}>

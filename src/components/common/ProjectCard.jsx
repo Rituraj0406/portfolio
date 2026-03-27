@@ -1,13 +1,9 @@
-import { useState } from "react";
 import styles from './ProjectCard.module.css'
 
 export default function ProjectCard({ project }) {
-    const [hovered, setHovered] = useState(false);
 
     return (
         <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
             className={styles.card}
         >
             {/* Slide-up dark overlay */}
