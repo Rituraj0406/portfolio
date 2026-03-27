@@ -1,9 +1,10 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    /* gap: 0; */
 }
 
+/* for desktop */
 .item {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -11,6 +12,56 @@
     padding: 2.5rem 0;
     border-top: 1px solid #ddd9d0;
     align-items: start;
+}
+
+/* for tablet <1024px */
+@media (max-width: 1024px) {
+    .item {
+        grid-template-columns: 160px 1fr;
+        gap: 1.5rem;
+    }
+
+    .role {
+        font-size: 1.15rem;
+    }
+}
+
+/* for mobile <768px */
+@media (max-width: 768px) {
+    .item {
+        grid-template-columns: 1fr;
+        /* 🔥 stack layout */
+        gap: 1rem;
+        padding: 2rem 0;
+    }
+
+    /* Move period/location above content */
+    .item>div:first-child {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .role {
+        font-size: 1.1rem;
+    }
+
+    .company {
+        font-size: 0.8rem;
+    }
+
+    .period {
+        font-size: 0.7rem;
+    }
+
+    .location {
+        font-size: 0.75rem;
+    }
+
+    .heighLight {
+        font-size: 0.82rem;
+    }
 }
 
 .role {
@@ -51,6 +102,12 @@
     margin: 0 auto;
 }
 
+
+@media (max-width: 768px) {
+    .section {
+        padding: 4rem 1.5rem;
+    }
+}
 .sectionLabel {
     font-family: "'DM Sans', sans-serif";
     font-size: 0.75rem;

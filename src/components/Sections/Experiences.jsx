@@ -31,7 +31,7 @@ export default function Experience() {
                                         {exp.highlights.map((h, j) => (
                                             <li key={j} className={styles.listItem}>
                                                 <span className={styles.listPointer}>◆</span>
-                                                <span className={styles.heighLights}>{h}</span>
+                                                <span className={styles.heighLight}>{h}</span>
                                             </li>
                                         ))}
                                     </ul>
