@@ -1,0 +1,95 @@
+.section {
+    background: #1a1a1a;
+}
+
+.container {
+    padding: 6rem clamp(1.5rem, 5vw, 4rem);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Label */
+.label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8b7355;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+/* Title */
+.title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 700;
+    color: #fafaf8;
+    margin-bottom: 1.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-align: justify;
+}
+
+/* Description */
+.desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #a09080;
+    max-width: 480px;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+/* Links container */
+.actions {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Email */
+.email {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    color: #fafaf8;
+    border-bottom: 1px solid #8b7355;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+/* Button base */
+.btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+}
+
+/* Primary button */
+.btnPrimary {
+    background: #8b7355;
+    color: #fafaf8;
+}
+
+/* Outline button */
+.btnOutline {
+    border: 1.5px solid #4a4a4a;
+    color: #a09080;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid #2e2e2e;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: #4a4a4a;
+    letter-spacing: 0.06em;
+}

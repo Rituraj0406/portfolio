@@ -1,0 +1,127 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem clamp(1.5rem, 5vw, 4rem) 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.tag {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+}
+
+.name {
+    font-family: "'Playfair Display', serif";
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.sub {
+    font-family: "'DM Sans', sans-serif";
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    max-width: 600px;
+    color: #5a5a5a;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: flex;
+    gap: 3rem;
+    margin-top: 4rem;
+    border-top: 1px solid #e8e4dc;
+    padding-top: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.sectionLabel {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: "uppercase";
+    color: "#8b7355";
+    margin-bottom: "0.75rem";
+}
+
+.sectionTitle {
+    font-family: "'Playfair Display', serif";
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+}
+
+.btnPrimary {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: #1a1a1a;
+    color: #fafaf8;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s,
+}
+
+
+.btnOutline {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: #1a1a1a;
+    border: 1.5px solid #1a1a1a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.statNum {
+    font-family: "'Playfair Display', serif";
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.statLabel {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8b7355;
+    margin-top: 0.35rem;
+}

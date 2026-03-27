@@ -1,0 +1,49 @@
+.container {
+    width: 100%;
+}
+
+/* Top Row */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.skill {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.progressText {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #8b7355;
+}
+
+/* Progress Bar */
+.bar {
+    height: 3px;
+    background: #ddd9d0;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: #1a1a1a;
+    border-radius: 2px;
+    width: 0;
+    transition: width 1s ease 0.3s;
+}
+
+/* Note */
+.note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #7a7a7a;
+}

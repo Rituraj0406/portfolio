@@ -1,0 +1,103 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2.5rem 0;
+    border-top: 1px solid #ddd9d0;
+    align-items: start;
+}
+
+.role {
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+}
+
+.company {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #5a5a5a;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.period {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #8b7355;
+    letter-spacing: 0.06em;
+}
+
+.location {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: #5a5a5a;
+    margin-top: 0.25rem;
+}
+.section {
+    padding: 6rem clamp(1.5rem, 5vw, 4rem);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sectionLabel {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8b7355;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+.sectionTitle {
+    font-family: "'Playfair Display', serif";
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+    text-align: justify;
+}
+
+.list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.listItem{
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.listPointer{
+    color: #8b7355;
+    margin-top: 0.35rem;
+    flex-shrink: 0;
+    font-size: 0.6rem;
+}
+
+.heighLight {
+    font-family: "'DM Sans', sans-serif";
+    font-size: 0.875rem;
+    color: #4a4a4a;
+    line-height: 1.65;
+}

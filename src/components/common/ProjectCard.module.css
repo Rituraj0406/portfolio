@@ -1,0 +1,139 @@
+.card {
+    background: #fafaf8;
+    padding: 2.5rem 2rem;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease;
+
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: #1a1a1a;
+    transform: translateY(100%);
+    transition: transform 0.45s;
+}
+
+.card:hover .overlay {
+    transform: translateY(0);
+}
+
+.contentLayer {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: fit-content;
+    transform: scale(1) rotate(0deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover .icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.cardContent {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.cardTitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    transition: color 0.3s ease;
+}
+
+.card:hover .cardTitle {
+    color: #fafaf8;
+}
+
+.badge {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8b7355;
+    border: 1px solid #8b7355;
+    padding: 0.15rem 0.5rem;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover .badge {
+    color: #c8a882;
+    border-color: #c8a882;
+}
+
+.desc {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    flex: 1;
+    color: #5a5a5a;
+    transition: color 0.3s ease;
+    text-align: justify;
+}
+
+.card:hover .desc {
+    color: #a09080;
+}
+
+.cardTagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+    background: #f0ede6;
+    color: #5a5a5a;
+    transform: translateY(4px);
+    opacity: 0.85;
+    transition: background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Hover state from parent */
+.card:hover .tag {
+    background: #2e2e2e;
+    color: #c0b8a8;
+    transform: translateY(0);
+    opacity: 1;
+}
