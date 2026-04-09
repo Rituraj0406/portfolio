@@ -1,44 +1,11 @@
-// import styles from "./Navbar.module.css";
-// import { useState, useEffect } from "react";
-
-// export default function Navbar({ links, scrollTo, active, menuOpen }) {
-//     const [scrolled, setScrolled] = useState(false);
-
-//     useEffect(() => {
-//         const onScroll = () => setScrolled(window.scrollY > 40);
-//         window.addEventListener("scroll", onScroll);
-//         return () => window.removeEventListener("scroll", onScroll);
-//     }, []);
-
-//     return (
-//         <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
-//             <div className={styles.inner}>
-//                 <div className={styles.logo} onClick={() => scrollTo("About")}>RR.</div>
-
-//                 <div className={styles.links} style={{ display: menuOpen ? "none" : "flex" }}>
-//                     {links.map((l) => (
-//                         <span
-//                             key={l}
-//                             className={`nav-link ${styles.navLink} ${active === l ? `${styles.active} nav-link--active` : ""
-//                                 }`}
-//                             onClick={() => scrollTo(l)}
-//                         >
-//                             {l}
-//                         </span>
-//                     ))}
-//                 </div>
-//             </div>
-//         </nav>
-//     );
-// }
-
-
 import styles from "./Navbar.module.css";
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
-export default function Navbar({ links, scrollTo, active }) {
+export default function Navbar({ isProjectsPage }) {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [active, setActive] = useState("About");
 
     // Scroll effect
     useEffect(() => {
@@ -59,62 +26,84 @@ export default function Navbar({ links, scrollTo, active }) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const scrollTo = (id) => {
+        document.getElementById(id.toLowerCase())
+            ?.scrollIntoView({ behavior: "smooth" });
+        setActive(id);
+        setMenuOpen(false);
+    };
+
+    const navLinks = ["About", "Skills", "Experience", "Projects", "Learning", "Contact"];
+
     return (
         <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
             <div className={styles.inner}>
 
                 {/* Logo */}
-                <div className={styles.logo} onClick={() => scrollTo("About")}>
-                    RR.
+                <div className={styles.logo}>
+                    {isProjectsPage ? (
+                        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>
+                            RR.
+                        </Link>
+                    ) : (
+                        <span onClick={() => scrollTo("About")} style={{ cursor: 'pointer' }}>RR.</span>
+                    )}
                 </div>
 
-                {/* Desktop Links */}
+                {/* Desktop Links or Back to Portfolio */}
                 <div className={styles.links}>
-                    {links.map((l) => (
-                        <span
-                            key={l}
-                            className={`nav-link ${styles.navLink} ${active === l ? `${styles.active} nav-link--active` : ""
-                                }`}
-                            onClick={() => {
-                                scrollTo(l);
-                                setMenuOpen(false);
-                            }}
+                    {isProjectsPage ? (
+                        <Link
+                            to="/"
+                            className={`nav-link ${styles.navLink}`}
+                            style={{ textDecoration: 'none', color: 'inherit' }}
                         >
-                            {l}
+                            ← Back to Portfolio
+                        </Link>
+                    ) : (
+                        navLinks.map((link) => (
+                            <span
+                                key={link}
+                                className={`nav-link ${styles.navLink} ${active === link ? `${styles.active} nav-link--active` : ""}`}
+                                onClick={() => scrollTo(link)}
+                            >
+                                {link}
+                            </span>
+                        ))
+                    )}
+                </div>
+
+                {/* Hamburger - only show on portfolio page */}
+                {!isProjectsPage && (
+                    <div
+                        className={`${styles.hamburger} ${menuOpen ? styles.open : ""
+                            }`}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        <span />
+                        <span />
+                        <span />
+                    </div>
+                )}
+            </div>
+
+            {/* Mobile Menu - only show on portfolio page */}
+            {!isProjectsPage && (
+                <div
+                    className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""
+                        }`}
+                >
+                    {navLinks.map((link) => (
+                        <span
+                            key={link}
+                            className={styles.mobileLink}
+                            onClick={() => scrollTo(link)}
+                        >
+                            {link}
                         </span>
                     ))}
                 </div>
-
-                {/* Hamburger */}
-                <div
-                    className={`${styles.hamburger} ${menuOpen ? styles.open : ""
-                        }`}
-                    onClick={() => setMenuOpen(!menuOpen)}
-                >
-                    <span />
-                    <span />
-                    <span />
-                </div>
-            </div>
-
-            {/* Mobile Menu */}
-            <div
-                className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""
-                    }`}
-            >
-                {links.map((l) => (
-                    <span
-                        key={l}
-                        className={styles.mobileLink}
-                        onClick={() => {
-                            scrollTo(l);
-                            setMenuOpen(false);
-                        }}
-                    >
-                        {l}
-                    </span>
-                ))}
-            </div>
+            )}
         </nav>
     );
 }

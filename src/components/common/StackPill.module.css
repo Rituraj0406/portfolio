@@ -1,0 +1,17 @@
+.pill {
+  font-family: "'DM Sans', sans-serif";
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.3rem 0.7rem;
+  background: #f0ede6;
+  color: #4a4a4a;
+  border-radius: 2px;
+  display: inline-block;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pill:hover {
+  background: #1a1a1a;
+  color: #fafaf8;
+}

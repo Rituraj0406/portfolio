@@ -1,5 +1,6 @@
 import styles from "./Contact.module.css";
 import FadeIn from "../common/FadeIn";
+import { Link } from 'react-router-dom';
 
 export default function Contact() {
     return (
@@ -34,14 +35,12 @@ export default function Contact() {
                         >
                             LinkedIn ↗
                         </a>
-                        {/* <a
-                            href="https://www.rituraj-portfolio.com"
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`contact-btn ${styles.btn} ${styles.btnOutline}`}
+                        <Link
+                            to="/projects"
+                            className={`contact-btn ${styles.btn} ${styles.btnPrimary}`}
                         >
-                            Portfolio ↗
-                        </a> */}
+                            Projects ↗
+                        </Link>
                     </div>
                 </FadeIn>
                 <FadeIn delay={0.4}>

@@ -1,0 +1,247 @@
+/* ── Scroll reveal ── */
+.article {
+  border-top: 1px solid #e8e4dc;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.article.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Header ── */
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+.headerMeta {
+  min-width: 0;
+}
+
+/* Number · type row */
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.index,
+.type {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b7355;
+}
+
+.type {
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.metaDash {
+  width: 24px;
+  height: 1px;
+  background: #c8c0b4;
+  flex-shrink: 0;
+}
+
+/* Name row */
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.05;
+}
+
+/* Summary */
+.summary {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #5a5a5a;
+  max-width: 600px;
+  margin: 1.25rem 0 0;
+}
+
+/* ── GitHub button ── */
+.githubBtn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border: 1.5px solid #1a1a1a;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+/* fill-up overlay */
+.githubBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  transform: translateY(105%);
+  transition: transform 0.35s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 0;
+}
+
+.githubBtn:hover::before {
+  transform: translateY(0);
+}
+
+.githubBtn:hover {
+  color: #fafaf8;
+}
+
+.githubBtn:active {
+  transform: scale(0.97);
+}
+
+.githubBtnInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Body grid ── */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+/* ── Shared column label ── */
+.colLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8b7355;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+/* ── Stack column ── */
+.stackGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.stackGroup {
+  /* wrapper for each category block */
+  text-align: left;
+}
+
+.stackCategory {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa098;
+  margin: 0 0 0.6rem;
+}
+
+.pillsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ── Challenges column ── */
+.challengesCol {
+  /* no extra styles needed — children handle spacing */
+}
+
+/* ── Takeaway block ── */
+.takeaway {
+  border-left: 3px solid;   /* color set via inline style */
+  padding: 1.25rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.takeawayLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 0.6rem;
+  /* color set via inline style */
+}
+
+.takeawayText {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #3a3a3a;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 720px) {
+  .body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .header {
+    grid-template-columns: 1fr;
+  }
+
+  .githubBtn {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .article {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .name {
+    font-size: 1.75rem;
+  }
+}

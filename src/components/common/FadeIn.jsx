@@ -1,4 +1,4 @@
-import useInView from "../../hooks/useInView.js";
+import useInView from "../../hooks/useInView";
 
 export default function FadeIn({ children, delay = 0 }) {
     const [ref, inView] = useInView();
