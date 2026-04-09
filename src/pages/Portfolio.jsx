@@ -7,7 +7,6 @@ import Contact from "../components/Sections/Contact";
 import { useState } from 'react';
 import { PORTFOLIO_HERO } from "../data";
 
-const NAV_LINKS = ["About", "Skills", "Experience", "Projects", "Learning", "Contact"];
 
 export default function Portfolio() {
     const [active, setActive] = useState("About");

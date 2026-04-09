@@ -1,9 +1,7 @@
-import { useState } from "react";
 import styles from "./Hero.module.css"
 import { splitTwoLines } from "../../utils/utils";
 
 export default function Hero({ scrollTo, tag, name, sub, stats, cta }) {
-    const [first, last] = name.split(" ");
 
     return (
         <section id="about" style={{background: "#fafaf8"}}>
