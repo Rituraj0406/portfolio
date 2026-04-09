@@ -9,7 +9,7 @@ import { PORTFOLIO_HERO } from "../data";
 
 
 export default function Portfolio() {
-    const [active, setActive] = useState("About");
+    const [, setActive] = useState("About");
 
     const scrollTo = (id) => {
         document.getElementById(id.toLowerCase())
